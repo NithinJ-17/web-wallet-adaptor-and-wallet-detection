@@ -1,0 +1,215 @@
+/* styles/globals.css */
+
+/* Apply global styles */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Define color variables for light and dark modes */
+:root {
+  --foreground-rgb: 255, 255, 255; /* White for light mode */
+  --background-start-rgb: 30, 30, 30; /* Dark grey for light mode */
+  --background-end-rgb: 20, 20, 20; /* Slightly darker grey for light mode */
+  --primary-color: 0, 122, 255; /* Bright blue for accents */
+  --secondary-color: 0, 150, 136; /* Teal for secondary elements */
+  --border-radius: 8px; /* Standard border radius */
+  --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for elevation */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255; /* White for dark mode */
+    --background-start-rgb: 20, 20, 20; /* Very dark grey for dark mode */
+    --background-end-rgb: 10, 10, 10; /* Almost black for dark mode */
+    --primary-color: 0, 122, 255; /* Bright blue for accents */
+    --secondary-color: 0, 150, 136; /* Teal for secondary elements */
+  }
+}
+
+/* Global body styles */
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      rgba(var(--background-start-rgb), 0.95),
+      rgba(var(--background-end-rgb), 1)
+    );
+  font-family: 'Inter', sans-serif; /* Refined font style */
+  font-weight: 400; /* Normal weight for text */
+  line-height: 1.6; /* Improved line height for readability */
+  margin: 0; /* Remove default body margin */
+  padding: 0; /* Remove default body padding */
+}
+
+/* Center content */
+.centered-content {
+  display: flex;
+  flex-direction: column; /* Align children in a column */
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Full viewport height */
+  text-align: center; /* Center text */
+  padding: 20px; /* Add some padding */
+  background-color: rgba(var(--background-start-rgb), 0.2); /* Slight background color */
+}
+
+/* Enhanced typography */
+h1, h2, h3, h4, h5, h6 {
+  color: rgb(var(--primary-color)); /* Use primary color for headings */
+  font-weight: 700; /* Bold headings */
+  margin-bottom: 16px; /* Spacing below headings */
+}
+
+p {
+  margin-bottom: 12px; /* Spacing below paragraphs */
+  font-weight: 300; /* Light font weight for paragraphs */
+}
+
+/* Custom Tailwind utility classes */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .text-shadow {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Additional utilities */
+  .box-shadow {
+    box-shadow: var(--box-shadow);
+  }
+
+  .rounded {
+    border-radius: var(--border-radius);
+  }
+
+  .bg-primary {
+    background-color: rgba(var(--primary-color), 0.1);
+  }
+
+  .bg-secondary {
+    background-color: rgba(var(--secondary-color), 0.1);
+  }
+
+  .text-primary {
+    color: rgb(var(--primary-color));
+  }
+
+  .text-secondary {
+    color: rgb(var(--secondary-color));
+  }
+}
+
+.wallet-detector {
+  position: fixed;
+  top: 200px;
+  right: 20px;
+  width: 350px;
+  background-color: rgb(var(--background-end-rgb));
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.wallet-detector:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.wallet-detector-button {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  background-color: rgb(var(--primary-color));
+  color: rgb(var(--foreground-rgb));
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 12px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.wallet-detector-button:hover {
+  background-color: rgb(var(--primary-color));
+  background-color: rgba(0, 122, 255, 0.8); /* Slightly lighter on hover */
+  transform: scale(1.02);
+}
+
+.wallet-detector-results {
+  margin-top: 15px;
+}
+
+.wallet-detector-results ul {
+  list-style: none;
+  color: rgb(var(--foreground-rgb));
+  padding: 0;
+}
+
+.wallet-detector-results li {
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.wallet-detector-results li:last-child {
+  border-bottom: none;
+}
+.wallet-details {
+  margin-top: 15px;
+  padding: 10px;
+  background-color: rgba(var(--background-end-rgb), 0.7);
+  border-radius: 8px;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.wallet-details pre {
+  white-space: pre-wrap;
+  color: rgb(var(--foreground-rgb));
+}
+
+/* styles/globals.css */
+
+/* Global styles */
+.Headline.Title {
+  position: absolute; /* Place it at the top of the page */
+  top: 20px; /* Slight distance from the top */
+  left: 40px; /* Slight distance from the left */
+  padding: 10px 20px; /* Padding around the text */
+  border: 2px solid rgba(255, 255, 255, 0.7); /* Border with slight transparency */
+  border-radius: 10px; /* Rounded corners */
+  background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black background */
+  color: white; /* White text color */
+  font-size: 2.5rem; /* Increase font size for an H1-like appearance */
+  font-weight: 700; /* Bold text */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Subtle shadow behind text */
+  letter-spacing: 1.5px; /* Slightly increase letter spacing */
+  box-shadow: none; /* No box shadow */
+  z-index: 1001; /* Ensure it's on top */
+  max-width: 90%; /* Ensure it doesn't extend too far */
+  text-align: center; /* Center-align the text */
+  transform: translateY(-10px); /* Slightly lift the element */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* On hover, lift the element slightly */
+.Headline.Title:hover {
+  transform: translateY(-15px);
+}
+
+/* Adjust for smaller screens */
+@media (max-width: 768px) {
+  .Headline.Title {
+    font-size: 2rem; /* Adjust font size for smaller screens */
+    left: 20px; /* Adjust left position */
+    top: 10px; /* Adjust top position */
+    padding: 8px 16px; /* Adjust padding */
+  }
+}
+
+
