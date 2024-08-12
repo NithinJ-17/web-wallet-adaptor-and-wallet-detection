@@ -137,7 +137,12 @@ const WalletDetector: React.FC = () => {
       case 'generic':
         const injectedWallets = detectInjectedWallets();
         results = injectedWallets.map(wallet => wallet.name);
+        if (injectedWallets.length > 0){
         details = injectedWallets.map(wallet => JSON.stringify(wallet.description, null, 2));
+        }
+        else{
+        details = [`Detected 0 Generic wallet provider(s):`];
+        }
         break;
       case 'ethereum':
         results = detectEthereumWallets();
