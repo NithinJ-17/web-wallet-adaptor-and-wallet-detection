@@ -35,4 +35,4 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
-More about thesis : https://spotless-homburg-122.notion.site/Report-on-Integrating-Web-Based-Wallet-with-a-Web-Application-681b1f0ac2b6455289ece9a6e6a0da85?pvs=4
+Thesis on Web-Based Wallet Adapters : https://spotless-homburg-122.notion.site/Report-on-Integrating-Web-Based-Wallet-with-a-Web-Application-681b1f0ac2b6455289ece9a6e6a0da85?pvs=4
